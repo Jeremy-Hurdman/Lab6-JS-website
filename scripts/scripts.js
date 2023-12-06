@@ -27,7 +27,8 @@ let duration = 0;
 
 // INSERT YOUR CODE HERE
 function recalculate() {
-    costLabel = document.getElementById("calculated-cost");
+    const costLabel = document.getElementById("calculated-cost");
+    let totalCost = 0;
     if (modelName === "XYZ") {
         totalCost = duration * 100;
     } else if (modelName === "CPRG") {
@@ -55,7 +56,7 @@ const modelButton = document.getElementById("model-button");
 modelButton.addEventListener("click", changeModel);
 
 function changeModel() {
-    modelText = document.getElementById("model-text")
+    const modelText = document.getElementById("model-text");
     if (modelName === "XYZ") {
         modelName = "CPRG";
         modelText.innerText = "Model CPRG";
@@ -87,7 +88,7 @@ const durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 
 function changeDuration() {
-    durationText = document.getElementById("duration-text");
+    const durationText = document.getElementById("duration-text");
     duration = prompt("how many days are you thinking of booking it for?");
     durationText.innerText = duration;
     recalculate();
